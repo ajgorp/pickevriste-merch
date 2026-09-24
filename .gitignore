@@ -16,4 +16,7 @@ node_modules
 #!.yarn/cache
 .pnp.*
 node_modules/
+.env
+.env.local
 .DS_Store
+*.log

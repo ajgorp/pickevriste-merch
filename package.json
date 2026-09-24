@@ -1,4 +1,12 @@
 {
   "name": "pickevriste-merch",
-  "packageManager": "yarn@4.12.0"
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "scripts": {
+    "start": "live-server --host=localhost"
+  }
 }
