@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="sr">
+<html lang="sr" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pičke Vrište - Merch</title>
+    <title>Pičke Vrište - Merch Store</title>
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,30 +11,962 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <main class="hero-wrapper">
-      <a
-        href="https://ig.me/m/picke.vriste.band"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hero-link"
-      >
-        <div class="hero-container">
-          <img
-            src="images/Landing page Picke Vriste 2.png"
-            alt="Pičke Vrište Merch"
-            class="hero-img"
-          />
 
-          <!-- TRAKA KOJA UVEK GAZI SLIKU U DNU -->
-          <div class="hero-bottom-bar">
-            <span class="bar-text">ITEMS AVAILABLE NOW</span>
-            <span class="fake-btn">BUY HERE</span>
+    <!-- TAILWIND CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              brandDark: "#0b0c0e",
+              brandGold: "#e5a639",
+              brandYellow: "#f7b22c",
+              brandCard: "#14161a",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="w-full bg-brandDark font-sans overflow-x-hidden text-white min-h-screen flex flex-col"
+  >
+    <!-- HEADER -->
+    <header
+      id="site-header"
+      class="fixed top-0 left-0 w-full z-40 transition-transform duration-300 ease-in-out bg-gradient-to-b from-brandDark/95 via-brandDark/80 to-transparent backdrop-blur-md"
+    >
+      <nav
+        aria-label="Global"
+        class="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8"
+      >
+        <div class="flex flex-1 items-center">
+          <div class="hidden lg:flex lg:gap-x-12">
+            <a
+              href="#"
+              class="text-sm/6 font-semibold text-white hover:text-brandYellow transition"
+              >Merch</a
+            >
+            <a
+              href="#biography"
+              class="text-sm/6 font-semibold text-white hover:text-brandYellow transition"
+              >Biografija</a
+            >
+            <a
+              href="#"
+              class="text-sm/6 font-semibold text-white hover:text-brandYellow transition"
+              >Galerija</a
+            >
+          </div>
+          <div class="flex lg:hidden">
+            <button
+              type="button"
+              command="show-modal"
+              commandfor="mobile-menu"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-300 hover:text-white"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                class="size-6"
+              >
+                <path
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
-      </a>
+
+        <!-- LOGO -->
+        <a href="#" class="-m-1.5 p-1.5 flex items-center justify-center">
+          <span class="sr-only">Pičke Vrište</span>
+          <img
+            src="images/PickeVristeLOGO-1.png"
+            alt="Pičke Vrište Logo"
+            class="h-12 md:h-16 w-auto object-contain transition-all duration-200"
+          />
+        </a>
+      </nav>
+
+      <!-- MOBILNI MENU DIALOG -->
+      <el-dialog>
+        <dialog id="mobile-menu" class="backdrop:bg-black/70 lg:hidden">
+          <div tabindex="0" class="fixed inset-0 focus:outline-none">
+            <el-dialog-panel
+              class="fixed inset-y-0 left-0 z-50 w-full overflow-y-auto bg-brandDark/95 backdrop-blur-md px-6 py-6 border-r border-white/10"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex flex-1">
+                  <button
+                    type="button"
+                    command="close"
+                    commandfor="mobile-menu"
+                    class="-m-2.5 rounded-md p-2.5 text-gray-400 hover:text-white"
+                  >
+                    <span class="sr-only">Close menu</span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      class="size-6"
+                    >
+                      <path
+                        d="M6 18 18 6M6 6l12 12"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <a href="#" class="-m-1.5 p-1.5">
+                  <span class="sr-only">Pičke Vrište</span>
+                  <img
+                    src="images/PickeVristeLOGO-1.png"
+                    alt="Pičke Vrište Logo"
+                    class="h-12 w-auto object-contain"
+                  />
+                </a>
+              </div>
+              <div class="mt-6 space-y-2">
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/10"
+                  >Merch</a
+                >
+                <a
+                  href="#biography"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/10"
+                  >Biografija</a
+                >
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/10"
+                  >Galerija</a
+                >
+              </div>
+            </el-dialog-panel>
+          </div>
+        </dialog>
+      </el-dialog>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main
+      class="w-full flex-grow pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+    >
+      <div class="text-center mb-12">
+        <h1
+          class="text-3xl sm:text-5xl font-black uppercase tracking-widest text-brandGold mb-3"
+        >
+          OFFICIAL MERCH
+        </h1>
+        <p
+          class="text-gray-400 text-sm sm:text-base font-medium max-w-md mx-auto"
+        >
+          Izaberite proizvod, veličinu i količinu za naručivanje direktno preko
+          Instagram DM-a.
+        </p>
+      </div>
+
+      <!-- GRID PROIZVODA -->
+      <div
+        id="products-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8"
+      >
+        <!-- Renderuje se iz JS -->
+      </div>
+      <!-- BIOGRAFIJA -->
+      <section id="biography" class="relative overflow-hidden py-12 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 items-center gap-y-12 lg:grid-cols-12 lg:gap-x-12 xl:gap-x-16"
+          >
+            <!-- TEKSTUALNI DEO -->
+            <div class="lg:col-span-5 flex flex-col justify-center">
+              <h2
+                class="text-3xl font-black uppercase tracking-wider text-white sm:text-5xl leading-tight mb-6"
+              >
+                <span class="text-brandYellow">Biografija</span>
+              </h2>
+              <p
+                class="text-gray-400 text-sm sm:text-base leading-relaxed mb-8"
+              >
+                Pičke Vrište su zagrebački melodični punk rock bend koji već 15
+                godina gradi svoj prepoznatljiv zvuk kroz zarazne melodije,
+                emotivne tekstove i energične nastupe. Iza sebe imaju dva
+                studijska albuma, Nedovršena Priča (2014.) i Crna Kutija
+                (2018.), te niz pjesama koje su obilježile domaću punk rock
+                scenu, poput „Oprosti“, „Sjeti se“, „Boje tuge“ i „Sedam
+                godina“. Nakon tragičnog gubitka frontmena Ivana Antolića -
+                Iveka i višegodišnje pauze, bend se 2025. vraća na scenu s novim
+                vokalom Marinom Lugovićem. Povratak donosi novu energiju, ali i
+                nastavak priče benda koji je od početka spajao melodični punk
+                rock s osobnim i emotivnim tekstovima. 2026. godine objavljuju
+                svoj treći album Memento Mori, kojim otvaraju novo poglavlje.
+                Album donosi zreliji i introspektivniji zvuk te se bavi temama
+                gubitka, sjećanja, prolaznosti i novih početaka, uz
+                prepoznatljive melodije i refrene koji su ostali zaštitni znak
+                benda. Album su najavili singlovi „Čuvaj suze“ i „Sjećanja“, a
+                domaći mediji istaknuli su ga kao jedno od njihovih najzrelijih
+                i najemotivnijih izdanja. Pičke Vrište nastupali su na
+                festivalima poput Ferragosta, RockLivea, EXITA, Zmajeva, Punk
+                Rock Holidaya, kao i na Brucošijadi FER-a, a danas nastavljaju
+                aktivno svirati u Hrvatskoj i regiji. Nakon 15 godina, bend je i
+                dalje vjeran svojoj osnovnoj ideji - stvarati iskrene, melodične
+                punk rock pjesme koje se najbolje doživljavaju uživo.
+              </p>
+            </div>
+
+            <!-- ASIMETRIČNA MREŽA SLIKA (GALERIJA) -->
+            <div class="lg:col-span-7 grid grid-cols-2 gap-4 sm:gap-6">
+              <!-- LEVA KOLONA SLIKA -->
+              <div class="space-y-4 sm:space-y-6">
+                <div
+                  class="overflow-hidden rounded-2xl border border-white/10 bg-brandCard group"
+                >
+                  <img
+                    src="images/band-3.jpg"
+                    alt="Slika 1"
+                    class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div
+                  class="overflow-hidden rounded-2xl border border-white/10 bg-brandCard group"
+                >
+                  <img
+                    src="images/band-1.jpg"
+                    alt="Slika 2"
+                    class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+
+              <!-- DESNA KOLONA SLIKA (BLAGO POMERENA NA DOLE) -->
+              <div class="space-y-4 sm:space-y-6 pt-8 sm:pt-12">
+                <div
+                  class="overflow-hidden rounded-2xl border border-white/10 bg-brandCard group"
+                >
+                  <img
+                    src="images/band-6.jpg"
+                    alt="Slika 3"
+                    class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div
+                  class="overflow-hidden rounded-2xl border border-white/10 bg-brandCard group"
+                >
+                  <img
+                    src="images/band-7.jpg"
+                    alt="Slika 4"
+                    class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- GALERIJA SLIKA (FACEBOOK STIL) -->
+      <section
+        id="gallery"
+        class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10 w-full"
+      >
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl sm:text-5xl font-black uppercase tracking-widest text-brandGold mb-3"
+          >
+            GALERIJA
+          </h2>
+        </div>
+
+        <!-- MREŽA SLIKA GALERIJE -->
+        <div
+          id="gallery-grid"
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <!-- Renderuje se dinamički iz JS-a -->
+        </div>
+      </section>
+
+      <!-- LIGHTBOX MODAL ZA GALERIJU -->
+      <div
+        id="gallery-modal"
+        class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-2 sm:p-6"
+      >
+        <!-- CLOSE BUTTON -->
+        <button
+          onclick="closeGalleryModal()"
+          class="absolute top-4 right-4 z-50 text-white/70 hover:text-white bg-black/50 p-2 rounded-full hover:bg-black/80 transition"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- PREV BUTTON -->
+        <button
+          onclick="prevGalleryImage()"
+          class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-50 text-white/70 hover:text-white bg-black/50 p-3 rounded-full hover:bg-black/80 transition"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- NEXT BUTTON -->
+        <button
+          onclick="nextGalleryImage()"
+          class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-50 text-white/70 hover:text-white bg-black/50 p-3 rounded-full hover:bg-black/80 transition"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- PRIKAZ SLIKE -->
+        <div
+          class="max-w-5xl max-h-[85vh] flex flex-col items-center justify-center relative select-none"
+        >
+          <img
+            id="lightbox-img"
+            src=""
+            alt=""
+            class="max-h-[75vh] w-auto max-w-full object-contain rounded-lg shadow-2xl"
+          />
+        </div>
+      </div>
     </main>
+    <!-- FOOTER / KONTAKT SEKCIJA (FULL WIDTH BACKGROUND) -->
+    <footer
+      id="contact"
+      class="w-full bg-brandCard border-t border-white/10 mt-20 py-12"
+    >
+      <!-- UNUTRAŠNJI KONTEJNER SAČUVAO POZICIJU SVIH PODATAKA -->
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-between gap-8 md:flex-row"
+      >
+        <!-- BRAND / LOGO & TAGLINE -->
+        <div
+          class="flex flex-col items-center md:items-start text-center md:text-left"
+        >
+          <a href="#" class="inline-block mb-3">
+            <img
+              src="images/PickeVristeLOGO-1.png"
+              alt="Pičke Vrište Logo"
+              class="h-10 w-auto object-contain"
+            />
+          </a>
+        </div>
+
+        <!-- DRUŠTVENE MREŽE (INSTAGRAM & FACEBOOK) -->
+        <div class="flex items-center gap-6">
+          <!-- INSTAGRAM -->
+          <a
+            href="https://ig.me/m/picke.vriste.band"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="flex items-center gap-2 text-gray-300 hover:text-brandYellow transition-colors group"
+          >
+            <div
+              class="p-2.5 rounded-xl bg-white/5 group-hover:bg-brandYellow/10 border border-white/10 group-hover:border-brandYellow/40 transition-all"
+            >
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </div>
+            <span class="font-bold text-sm tracking-wider uppercase"
+              >Instagram</span
+            >
+          </a>
+
+          <!-- FACEBOOK -->
+          <a
+            href="https://www.facebook.com/PickeVriste"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            class="flex items-center gap-2 text-gray-300 hover:text-brandYellow transition-colors group"
+          >
+            <div
+              class="p-2.5 rounded-xl bg-white/5 group-hover:bg-brandYellow/10 border border-white/10 group-hover:border-brandYellow/40 transition-all"
+            >
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </div>
+            <span class="font-bold text-sm tracking-wider uppercase"
+              >Facebook</span
+            >
+          </a>
+        </div>
+      </div>
+
+      <!-- COPYRIGHT BAR  -->
+      <div
+        class="mt-10 pt-6 border-t border-white/5 text-center text-xs text-gray-500 font-medium max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        &copy; <span id="copyright-year">2026</span> Pičke Vrište. Sva prava
+        zadržana.
+      </div>
+    </footer>
+    <!-- MODAL ZA IZBOR VELIČINE I KOLIČINE -->
+    <div
+      id="order-modal"
+      class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+    >
+      <div
+        class="bg-brandCard border border-white/10 rounded-2xl w-full max-w-md p-6 relative shadow-2xl"
+      >
+        <!-- CLOSE BUTTON -->
+        <button
+          onclick="closeModal()"
+          class="absolute top-4 right-4 text-gray-400 hover:text-white p-1"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- DETALJI PROIZVODA U MODALU -->
+        <div class="flex gap-4 items-center mb-6">
+          <img
+            id="modal-img"
+            src=""
+            alt=""
+            class="w-20 h-20 object-contain rounded-xl bg-white border border-white/10 p-2"
+          />
+          <div>
+            <h3
+              id="modal-title"
+              class="font-bold text-lg text-white uppercase"
+            ></h3>
+            <p id="modal-price" class="text-brandGold font-black text-xl"></p>
+          </div>
+        </div>
+
+        <!-- IZBOR VELIČINE (DINAMIČKI SE SAKRIVA AKO PROIZVOD NEMA VELIČINU) -->
+        <div id="size-section" class="mb-5">
+          <label
+            class="block text-sm font-semibold uppercase tracking-wider text-gray-300 mb-2"
+            >Veličina:</label
+          >
+          <div class="grid grid-cols-5 gap-2" id="size-options">
+            <button
+              onclick="selectSize('S')"
+              class="size-btn py-2 border border-white/20 rounded-lg font-bold text-sm hover:border-brandYellow transition text-center"
+            >
+              S
+            </button>
+            <button
+              onclick="selectSize('M')"
+              class="size-btn py-2 border border-white/20 rounded-lg font-bold text-sm hover:border-brandYellow transition text-center"
+            >
+              M
+            </button>
+            <button
+              onclick="selectSize('L')"
+              class="size-btn py-2 border border-white/20 rounded-lg font-bold text-sm hover:border-brandYellow transition text-center active-size bg-brandYellow text-black border-brandYellow"
+            >
+              L
+            </button>
+            <button
+              onclick="selectSize('XL')"
+              class="size-btn py-2 border border-white/20 rounded-lg font-bold text-sm hover:border-brandYellow transition text-center"
+            >
+              XL
+            </button>
+            <button
+              onclick="selectSize('2XL')"
+              class="size-btn py-2 border border-white/20 rounded-lg font-bold text-sm hover:border-brandYellow transition text-center"
+            >
+              2XL
+            </button>
+          </div>
+        </div>
+
+        <!-- IZBOR KOLIČINE -->
+        <div class="mb-6">
+          <label
+            class="block text-sm font-semibold uppercase tracking-wider text-gray-300 mb-2"
+            >Količina:</label
+          >
+          <div
+            class="flex items-center border border-white/20 rounded-lg w-36 overflow-hidden"
+          >
+            <button
+              onclick="changeQty(-1)"
+              class="w-12 py-2 bg-white/5 hover:bg-white/10 text-xl font-bold"
+            >
+              -
+            </button>
+            <span id="modal-qty" class="flex-1 text-center font-black text-lg"
+              >1</span
+            >
+            <button
+              onclick="changeQty(1)"
+              class="w-12 py-2 bg-white/5 hover:bg-white/10 text-xl font-bold"
+            >
+              +
+            </button>
+          </div>
+        </div>
+
+        <!-- DUGME ZA SLANJE -->
+        <button
+          onclick="confirmOrder()"
+          class="w-full bg-brandYellow hover:bg-white text-black font-black uppercase tracking-wider py-4 rounded-xl transition-all duration-200 shadow-lg text-center block"
+        >
+          KOPIRAJ I IDI NA INSTAGRAM
+        </button>
+        <p class="text-xs text-gray-400 text-center mt-3">
+          Poruka sa detaljima porudžbine će biti kopirana, samo je zalepite u DM
+          chat!
+        </p>
+      </div>
+    </div>
+
+    <!-- SCRIPT LOGIKA -->
+    <script>
+      const INSTAGRAM_DM_LINK = "https://ig.me/m/picke.vriste.band";
+
+      const products = [
+        {
+          id: 1,
+          title: "T-shirt logo - crna",
+          price: "15.00 €",
+          image: "images/image00003.png",
+          scaleDown: true,
+          paddingClass: "p-6",
+          hasSize: true,
+        },
+        {
+          id: 2,
+          title: "T-shirt logo - bela",
+          price: "15.00 €",
+          image: "images/image00004.png",
+          scaleDown: true,
+          paddingClass: "p-6",
+          hasSize: true,
+        },
+        {
+          id: 3,
+          title: "T-shirt logo - roza",
+          price: "15.00 €",
+          image: "images/image00005.png",
+          scaleDown: true,
+          paddingClass: "p-6",
+          hasSize: true,
+        },
+        {
+          id: 4,
+          title: "Hoodie logo - crni",
+          price: "40.00 €",
+          image: "images/image00035.jpeg",
+          hasSize: true,
+        },
+        {
+          id: 5,
+          title: "T-shirt lima - crna",
+          price: "20.00 €",
+          image: "images/T-shirt-Lima.jpeg",
+          scaleDown: true,
+          paddingClass: "p-2", // Blag padding kako bi majica bila veća, a cela vidljiva
+          hasSize: true,
+        },
+        {
+          id: 6,
+          title: "Čarape",
+          price: "10.00 €",
+          image: "images/image00002.jpeg",
+          hasSize: false,
+        },
+        {
+          id: 7,
+          title: "Ceker",
+          price: "10.00 €",
+          image: "images/image00069.jpeg",
+          scaleDown: true,
+          paddingClass: "p-6",
+          hasSize: false,
+        },
+        {
+          id: 8,
+          title: "Rizle",
+          price: "2.50 €",
+          image: "images/Rizle.jpeg",
+          hasSize: false,
+        },
+        {
+          id: 9,
+          title: "Vinyl Nedovršena Priča",
+          price: "20.00 €",
+          image: "images/image00006.jpeg",
+          hasSize: false,
+        },
+        {
+          id: 10,
+          title: "CD Nedovršena priča",
+          price: "10.00 €",
+          image: "images/image00008.jpeg",
+          hasSize: false,
+        },
+        {
+          id: 11,
+          title: "CD Crna kutija",
+          price: "10.00 €",
+          image: "images/image00007.jpeg",
+          hasSize: false,
+        },
+        {
+          id: 12,
+          title: "CD Memento mori",
+          price: "10.00 €",
+          image: "images/image00033.png",
+          hasSize: false,
+        },
+      ];
+
+      // RENDER PROIZVODA
+      const productsGrid = document.getElementById("products-grid");
+      productsGrid.innerHTML = products
+        .map(
+          (product) => `
+  <div class="bg-brandCard border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-brandYellow/50 transition-all duration-300 group">
+    <div class="w-full aspect-square bg-white overflow-hidden relative flex items-center justify-center p-2">
+      <img 
+        src="${product.image}" 
+        alt="${product.title}" 
+        onerror="this.onerror=null; this.src='https://via.placeholder.com/500x500/ffffff/000000?text=PV+Merch+${product.id}';"
+        class="w-full h-full ${
+          product.scaleDown
+            ? `object-contain ${product.paddingClass || "p-6"} group-hover:scale-105`
+            : "object-cover group-hover:scale-105"
+        } transition-transform duration-300"
+      />
+    </div>
+    <div class="p-5 flex flex-col flex-grow justify-between gap-4 text-center">
+      <div>
+        <h3 class="text-lg font-bold text-white uppercase tracking-wider mb-1 line-clamp-1">${product.title}</h3>
+        <p class="text-brandGold font-black text-xl tracking-wide">${product.price}</p>
+      </div>
+      <button 
+        onclick="openModal(${product.id})" 
+        class="w-full bg-brandYellow hover:bg-white text-black font-black uppercase tracking-wider py-3 px-4 rounded-xl transition-all duration-200 hover:scale-[1.02] block text-center shadow-lg"
+      >
+        BUY HERE
+      </button>
+    </div>
+  </div>
+`,
+        )
+        .join("");
+
+      // STATE ZA MODAL
+      let currentProduct = null;
+      let selectedSize = "L";
+      let currentQty = 1;
+
+      function openModal(productId) {
+        currentProduct = products.find((p) => p.id === productId);
+        selectedSize = "L";
+        currentQty = 1;
+
+        document.getElementById("modal-img").src = currentProduct.image;
+        document.getElementById("modal-title").innerText = currentProduct.title;
+        document.getElementById("modal-price").innerText = currentProduct.price;
+        document.getElementById("modal-qty").innerText = currentQty;
+
+        const sizeSection = document.getElementById("size-section");
+        if (currentProduct.hasSize) {
+          sizeSection.classList.remove("hidden");
+          selectSize("L");
+        } else {
+          sizeSection.classList.add("hidden");
+        }
+
+        document.getElementById("order-modal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("order-modal").classList.add("hidden");
+      }
+
+      function selectSize(size) {
+        selectedSize = size;
+        document.querySelectorAll(".size-btn").forEach((btn) => {
+          if (btn.innerText === size) {
+            btn.className =
+              "size-btn py-2 border rounded-lg font-bold text-sm transition text-center bg-brandYellow text-black border-brandYellow";
+          } else {
+            btn.className =
+              "size-btn py-2 border border-white/20 rounded-lg font-bold text-sm hover:border-brandYellow transition text-center text-white";
+          }
+        });
+      }
+
+      function changeQty(delta) {
+        currentQty = Math.max(1, currentQty + delta);
+        document.getElementById("modal-qty").innerText = currentQty;
+      }
+
+      function confirmOrder() {
+        let orderText = `Zdravo! Želim da naručim:\n\n📦 Proizvod: ${currentProduct.title}\n`;
+        if (currentProduct.hasSize) {
+          orderText += `📏 Veličina: ${selectedSize}\n`;
+        }
+        orderText += `🔢 Količina: ${currentQty}\n💰 Cena: ${currentProduct.price}`;
+
+        // Kopiranje teksta u clipboard
+        navigator.clipboard
+          .writeText(orderText)
+          .then(() => {
+            alert(
+              "Porudžbina je kopirana! Otvaramo Instagram DM — samo zalepite (Paste) poruku.",
+            );
+            window.open(INSTAGRAM_DM_LINK, "_blank");
+            closeModal();
+          })
+          .catch(() => {
+            window.open(INSTAGRAM_DM_LINK, "_blank");
+            closeModal();
+          });
+      }
+
+      // SMART SCROLL HEADER LOGIKA
+      let lastScrollY = window.scrollY;
+      const header = document.getElementById("site-header");
+
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY <= 10) {
+          header.classList.remove("-translate-y-full");
+          return;
+        }
+        if (currentScrollY > lastScrollY) {
+          header.classList.add("-translate-y-full");
+        } else {
+          header.classList.remove("-translate-y-full");
+        }
+        lastScrollY = currentScrollY;
+      });
+
+      // NIZ SLIKA ZA GALERIJU (ZAMENI SA TVOJIM PUTANJAMA I OPISIMA)
+      const galleryImages = [
+        {
+          url: "images/band-2.jpg",
+        },
+        {
+          url: "images/band-4.jpg",
+        },
+        {
+          url: "images/band-5.jpg",
+        },
+        {
+          url: "images/band-1.jpg",
+        },
+        {
+          url: "images/band-6.jpg",
+        },
+        {
+          url: "images/PRH-1.jpg",
+        },
+        {
+          url: "images/PRH-2.jpg",
+        },
+        {
+          url: "images/Boogaloo-1.jpg",
+        },
+        {
+          url: "images/Boogaloo-2.jpg",
+        },
+        {
+          url: "images/Boogaloo-3.jpg",
+        },
+        {
+          url: "images/Exit-1.jpg",
+        },
+        {
+          url: "images/Exit-2.jpg",
+        },
+        {
+          url: "images/Exit-3.jpg",
+        },
+        {
+          url: "images/Svirka-1.jpg",
+        },
+        {
+          url: "images/Svirka-2.jpg",
+        },
+        {
+          url: "images/Svirka-3.jpg",
+        },
+        {
+          url: "images/Svirka-4.jpg",
+        },
+        {
+          url: "images/Svirka-5.jpg",
+        },
+        {
+          url: "images/Svirka-6.jpg",
+        },
+        {
+          url: "images/Svirka-7.jpg",
+        },
+        {
+          url: "images/Svirka-8.jpg",
+        },
+        {
+          url: "images/Svirka-9.jpg",
+        },
+        {
+          url: "images/Svirka-10.jpg",
+        },
+        {
+          url: "images/Svirka-11.jpg",
+        },
+        {
+          url: "images/Svirka-12.jpg",
+        },
+        {
+          url: "images/Svirka-13.jpg",
+        },
+        {
+          url: "images/Svirka-14.jpg",
+        },
+        {
+          url: "images/Svirka-15.jpg",
+        },
+      ];
+
+      // RENDER SVIH SLIKA U GRID
+      const galleryGrid = document.getElementById("gallery-grid");
+      galleryGrid.innerHTML = galleryImages
+        .map(
+          (img, index) => `
+  <div 
+    onclick="openGalleryModal(${index})"
+    class="aspect-square bg-brandCard border border-white/10 rounded-xl overflow-hidden cursor-pointer group relative"
+  >
+    <img 
+      src="${img.url}" 
+      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+    />
+    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+      <span class="text-white text-xs font-bold uppercase tracking-wider bg-black/60 px-3 py-1.5 rounded-lg border border-white/20">Povećaj</span>
+    </div>
+  </div>
+`,
+        )
+        .join("");
+
+      // LIGHTBOX LOGIKA & KONTROLE
+      let currentGalleryIndex = 0;
+
+      function openGalleryModal(index) {
+        currentGalleryIndex = index;
+        updateLightbox();
+        document.getElementById("gallery-modal").classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Blokira skrolovanje u pozadini
+      }
+
+      function closeGalleryModal() {
+        document.getElementById("gallery-modal").classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      function updateLightbox() {
+        const imgObj = galleryImages[currentGalleryIndex];
+        document.getElementById("lightbox-img").src = imgObj.url;
+      }
+
+      function prevGalleryImage() {
+        currentGalleryIndex =
+          (currentGalleryIndex - 1 + galleryImages.length) %
+          galleryImages.length;
+        updateLightbox();
+      }
+
+      function nextGalleryImage() {
+        currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+        updateLightbox();
+      }
+
+      // NAVIGACIJA PREKO TASTATURE (Escape za zatvaranje, strelice za listanje)
+      window.addEventListener("keydown", (e) => {
+        const galleryModal = document.getElementById("gallery-modal");
+        if (!galleryModal.classList.contains("hidden")) {
+          if (e.key === "Escape") closeGalleryModal();
+          if (e.key === "ArrowLeft") prevGalleryImage();
+          if (e.key === "ArrowRight") nextGalleryImage();
+        }
+      });
+
+      // AUTOMATSKA GODINA U COPYRIGHT-U
+      const startYear = 2026;
+      const currentYear = new Date().getFullYear();
+      const copyrightElement = document.getElementById("copyright-year");
+
+      if (copyrightElement) {
+        copyrightElement.innerText =
+          currentYear > startYear ? `${startYear}-${currentYear}` : startYear;
+      }
+    </script>
   </body>
 </html>
